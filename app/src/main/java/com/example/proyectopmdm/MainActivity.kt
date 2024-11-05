@@ -30,6 +30,7 @@ import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -53,24 +54,43 @@ class MainActivity : ComponentActivity() {
 fun app() {
     ProyectoPMDMTheme {
 
-        Column(modifier = Modifier.fillMaxSize().background(primaryLight).wrapContentSize(Alignment.Center)) {
+        Column(modifier = Modifier.fillMaxSize().background(color = MaterialTheme.colorScheme.onPrimary).wrapContentSize(Alignment.Center)) {
+            Text(
+                modifier = Modifier.align(CenterHorizontally),
+                text = "Acerca De Malaga FC",
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onPrimaryContainer
 
+
+            )
             Image(
                 painter = painterResource(id = R.drawable.malaga),
                 contentDescription = "logo malaga",
-                )
+            )
 
             Row(
                 modifier = Modifier.align(CenterHorizontally),
                 verticalAlignment = Alignment.CenterVertically
 
             ){
-
-                    ButtonInformacion()
-                     ButtonAyuda()
+                Text(
+                    text = "Agustin",
+                    Modifier.padding(10.dp),
+                    fontSize = 15.sp
+                )
+                Text(
+                    text = "Miguel C",
+                    fontSize = 15.sp
+                )
             }
 
-
+            Text(
+                modifier = Modifier.align(CenterHorizontally),
+                text = "Licencia freemium",
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.error,
+                fontSize = 10.sp
+            )
 
         }
     }
