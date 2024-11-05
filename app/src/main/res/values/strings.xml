@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ProyectoPMDM</string>
+    <string name="ayuda">Ayuda</string>
+    <string name="informacion">Informacion</string>
 </resources>

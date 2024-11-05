@@ -1,6 +1,7 @@
 package com.example.proyectopmdm
 
 import android.os.Bundle
+import android.provider.Settings.System.*
 import android.widget.Button
 import androidx.compose.foundation.layout.*
 import androidx.activity.ComponentActivity
@@ -20,6 +21,8 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.*
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
@@ -28,6 +31,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.proyectopmdm.R.string.informacion
 import com.example.proyectopmdm.ui.theme.*
 
 class MainActivity : ComponentActivity() {
@@ -46,19 +50,26 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun app() {
     ProyectoPMDMTheme {
+
         Column(modifier = Modifier.fillMaxSize().background(primaryLight).wrapContentSize(Alignment.Center)) {
+
             Image(
                 painter = painterResource(id = R.drawable.malaga),
                 contentDescription = "logo malaga",
                 )
+
             Row(
                 modifier = Modifier.align(CenterHorizontally),
-                verticalArrangement = Arrangement.SpaceAround,
-                horizontalAlignmet = CenterHorizontally
+                verticalAlignment = Alignment.CenterVertically
+
             ){
+
                     ButtonInformacion()
                      ButtonAyuda()
             }
+
+
+
         }
     }
 }
@@ -66,7 +77,7 @@ fun app() {
 @Composable
 fun ButtonInformacion(){
     Button(onClick = { }, modifier = Modifier.padding(5.dp)) {
-        Text( text = "informacion")
+        Text(text = "informacion")
     }
 }
 
