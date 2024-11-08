@@ -37,42 +37,34 @@ import androidx.compose.ui.unit.sp
 import com.example.proyectopmdm.R.string.informacion
 import com.example.proyectopmdm.ui.theme.*
 
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            ProyectoPMDMTheme {
-               configuracion()
-            }
-        }
-    }
-}
-
 @Preview(showBackground = true)
 @Composable
-fun app() {
+fun configuracion() {
     ProyectoPMDMTheme {
 
-        Column(modifier = Modifier.fillMaxSize().background(color = MaterialTheme.colorScheme.onPrimary).wrapContentSize(Alignment.Center)) {
+        Column(
+            modifier = Modifier.fillMaxSize()
+                .background(color = MaterialTheme.colorScheme.onPrimary)
+                .wrapContentSize(Alignment.Center)
+        ) {
             Text(
                 modifier = Modifier.align(CenterHorizontally),
-                text = "Acerca De Malaga FC",
+                text = "Configuracion",
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onPrimaryContainer
 
 
             )
             Image(
-                painter = painterResource(id = R.drawable.malaga),
-                contentDescription = "logo malaga",
+                painter = painterResource(id = R.drawable.ajustes),
+                contentDescription = "ajustes",
             )
 
             Row(
                 modifier = Modifier.align(CenterHorizontally),
                 verticalAlignment = Alignment.CenterVertically
 
-            ){
+            ) {
                 Text(
                     text = "Agustin",
                     Modifier.padding(10.dp),
@@ -93,20 +85,5 @@ fun app() {
             )
 
         }
-    }
-}
-
-@Composable
-fun ButtonInformacion(){
-    Button(onClick = { }, modifier = Modifier.padding(5.dp)) {
-        Text(text = "informacion")
-
-    }
-}
-
-@Composable
-fun ButtonAyuda(){
-    Button(onClick = { }, modifier = Modifier.padding(5.dp)) {
-        Text( text = "ayuda")
     }
 }
