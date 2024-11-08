@@ -29,12 +29,13 @@ import com.example.proyectopmdm.ui.theme.primaryLight
 fun AcercaDe() {
     ProyectoPMDMTheme {
 
-        Column(modifier = Modifier.fillMaxSize().background(primaryLight).wrapContentSize(Alignment.Center)) {
+        Column(modifier = Modifier.fillMaxSize().background(primaryLight).wrapContentSize(Alignment.Center).padding(20.dp)) {
             Text(
-                modifier = Modifier.align(CenterHorizontally),
+                modifier = Modifier.align(CenterHorizontally).padding(15.dp),
                 text = "Acerca De Malaga FC",
                 fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.onPrimaryContainer
+                color = MaterialTheme.colorScheme.onPrimaryContainer,
+
 
 
             )

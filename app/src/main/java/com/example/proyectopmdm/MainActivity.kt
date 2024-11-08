@@ -30,6 +30,7 @@ import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -43,70 +44,46 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ProyectoPMDMTheme {
-               configuracion()
+               Inicio()
             }
         }
     }
 }
-
-@Preview(showBackground = true)
+@Preview
 @Composable
-fun app() {
+fun Inicio(){
     ProyectoPMDMTheme {
 
-        Column(modifier = Modifier.fillMaxSize().background(color = MaterialTheme.colorScheme.onPrimary).wrapContentSize(Alignment.Center)) {
+        Column(modifier = Modifier.fillMaxSize().background(primaryLight).wrapContentSize(Alignment.TopCenter).padding(15.dp)) {
             Text(
                 modifier = Modifier.align(CenterHorizontally),
-                text = "Acerca De Malaga FC",
+                text = "Inicio",
                 fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.onPrimaryContainer
-
-
+                fontSize = 45.sp,
+                color = MaterialTheme.colorScheme.onPrimaryContainer,
+                fontFamily = FontFamily.Serif
             )
             Image(
                 painter = painterResource(id = R.drawable.malaga),
                 contentDescription = "logo malaga",
+                Modifier.padding(15.dp).size(width = 260.dp, height = 320.dp)
             )
 
-            Row(
-                modifier = Modifier.align(CenterHorizontally),
-                verticalAlignment = Alignment.CenterVertically
-
-            ){
-                Text(
-                    text = "Agustin",
-                    Modifier.padding(10.dp),
-                    fontSize = 15.sp
-                )
-                Text(
-                    text = "Miguel C",
-                    fontSize = 15.sp
-                )
-            }
-
-            Text(
-                modifier = Modifier.align(CenterHorizontally),
-                text = "Licencia freemium",
-                fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.error,
-                fontSize = 10.sp
-            )
 
         }
     }
-}
+    @Composable
+    fun ButtonAcercaDe(){
+        Button(onClick = { }, modifier = Modifier.padding(5.dp)) {
+            Text(text = "Acerca de ")
 
-@Composable
-fun ButtonInformacion(){
-    Button(onClick = { }, modifier = Modifier.padding(5.dp)) {
-        Text(text = "informacion")
-
+        }
     }
-}
 
-@Composable
-fun ButtonAyuda(){
-    Button(onClick = { }, modifier = Modifier.padding(5.dp)) {
-        Text( text = "ayuda")
+    @Composable
+    fun ButtonConfiguracion(){
+        Button(onClick = { }, modifier = Modifier.padding(5.dp)) {
+            Text( text = "Configuracion")
+        }
     }
 }

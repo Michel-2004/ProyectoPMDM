@@ -1,10 +1,10 @@
 package com.example.proyectopmdm.ui.theme
 import androidx.compose.ui.graphics.Color
 
-val primaryLight = Color(0xBAA1D2EE)
+val primaryLight = Color(0xFFDAFFFF)
 val onPrimaryLight = Color(0xFFFFFFFF)
-val primaryContainerLight = Color(0xFFDEE0FF)
-val onPrimaryContainerLight = Color(0xFF0B154B)
+val primaryContainerLight = Color(0xFFE7E7F5)
+val onPrimaryContainerLight = Color(0xFF102694)
 val secondaryLight = Color(0xFF5B5D72)
 val onSecondaryLight = Color(0xFFFFFFFF)
 val secondaryContainerLight = Color(0xFFDFE1F9)
