@@ -8,12 +8,14 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -49,18 +51,27 @@ fun Inicio(navController: NavController) {
                 Modifier.padding(15.dp).size(width = 260.dp, height = 320.dp)
             )
 
-            Button(onClick = {navController.navigate(route = AppScreens.AcercaDe.route)})
+            Button(
+                onClick = {navController.navigate(route = AppScreens.AcercaDe.route)},
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.onPrimaryContainer
+                )
+            )
             {
-                Modifier.padding(5.dp).background(MaterialTheme.colorScheme.onPrimaryContainer)
-
+                Modifier.padding(5.dp).fillMaxSize()
                 Text(text = "Acerca de ")
 
             }
 
-            Button(onClick = {navController.navigate(route = AppScreens.Configuracion.route)})
+            Button(
+                onClick = {navController.navigate(route = AppScreens.Configuracion.route)},
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.onPrimaryContainer
+                )
+            )
             {
                 Modifier.padding(5.dp)
-                Text(text = "Configuracion ")
+                Text(text = "Configuracion")
 
             }
         }
