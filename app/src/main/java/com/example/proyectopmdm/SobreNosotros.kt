@@ -54,7 +54,7 @@ fun SobreNosotros(){
                 style = MaterialTheme.typography.headlineMedium,
                 color = MaterialTheme.colorScheme.onBackground,
                 textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth() // Hace que el texto ocupe todo el ancho para centrarse
             )
             Image(
                 painter = painterResource(id = R.drawable.larosaleda),
@@ -67,7 +67,7 @@ fun SobreNosotros(){
                 style = MaterialTheme.typography.headlineMedium,
                 color = MaterialTheme.colorScheme.onBackground,
                 textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth() // Hace que el texto ocupe todo el ancho para centrarse
             )
         }
     }
