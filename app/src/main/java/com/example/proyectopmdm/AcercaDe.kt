@@ -2,12 +2,16 @@ package com.example.proyectopmdm
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -21,20 +25,29 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.proyectopmdm.ui.theme.ProyectoPMDMTheme
 import com.example.proyectopmdm.ui.theme.primaryLight
 
-@Preview(showBackground = true)
 @Composable
-fun AcercaDe() {
+fun AcercaDe(navController: NavController) {
     ProyectoPMDMTheme {
 
-        Column(modifier = Modifier.fillMaxSize().background(primaryLight).wrapContentSize(Alignment.Center)) {
+        Column(modifier = Modifier.fillMaxSize().background(primaryLight).wrapContentSize(Alignment.Center).padding(20.dp)) {
+            Icon(
+                imageVector = Icons.Default.ArrowBack,
+                contentDescription = "volver",
+                modifier = Modifier.clickable {
+                    navController.popBackStack()
+                }
+                    .wrapContentSize(Alignment.TopEnd)
+            )
+
             Text(
-                modifier = Modifier.align(CenterHorizontally),
+                modifier = Modifier.align(CenterHorizontally).padding(15.dp),
                 text = "Acerca De Malaga FC",
                 fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.onPrimaryContainer
+                color = MaterialTheme.colorScheme.onPrimaryContainer,
 
 
             )
