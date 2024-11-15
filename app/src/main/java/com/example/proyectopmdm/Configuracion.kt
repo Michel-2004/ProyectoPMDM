@@ -66,31 +66,17 @@ fun Configuracion(navController: NavController) {
                 verticalAlignment = Alignment.CenterVertically
 
             ) {
-                val radioOptions = listOf("Hombre", "Mujer", "Otros")
-                val (selectedOption, onOptionSelected) = remember { mutableStateOf(radioOptions[1] ) }
+                val genero = remember { mutableStateOf("") }
+                RadioButton( selected = genero.value == "Masculino",
+                    onClick = { genero.value = "Masculino" } )
+                Text(text = "Masculino",
+                    modifier = Modifier.padding(start = 8.dp))
 
-                radioOptions.forEach { text ->
-                    Row(
-                        Modifier
-                            .fillMaxWidth()
-                            .selectable(
-                                selected = (text == selectedOption),
-                                onClick = {
-                                    onOptionSelected(text)
-                                }
-                            )
-                            .padding(horizontal = 16.dp)
-                    ) {
-                        RadioButton(
-                            selected = (text == selectedOption),
-                            onClick = { onOptionSelected(text) }
-                        )
-                        Text(
-                            text = text,
-                            modifier = Modifier.padding(start = 16.dp)
-                        )
-                    }
-                }
+                RadioButton( selected =genero.value == "Femenino",
+                    onClick = { genero.value = "Femenino" } )
+                Text(text = "Femenino",
+                    modifier = Modifier.padding(start = 8.dp))
+
             }
         }
     }

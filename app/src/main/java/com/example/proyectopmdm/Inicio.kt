@@ -76,6 +76,18 @@ fun Inicio(navController: NavController) {
                 Text(text = "Configuracion")
 
             }
+            Button(
+                onClick = {navController.navigate(route = AppScreens.SobreNosotros.route)},
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.onPrimaryContainer
+                )
+            )
+            {
+                Modifier.padding(5.dp)
+                Text(text = "Sobre NosotrosS")
+
+            }
+
         }
     }
 }
