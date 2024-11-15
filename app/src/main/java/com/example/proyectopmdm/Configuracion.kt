@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
@@ -77,6 +78,22 @@ fun Configuracion(navController: NavController) {
                 Text(text = "Femenino",
                     modifier = Modifier.padding(start = 8.dp))
 
+            }
+            Column(
+                modifier = Modifier.fillMaxSize()
+                    .wrapContentSize(Alignment.Center)
+            ){
+                val verPartidosLiga = remember { mutableStateOf(false) }
+                val verPartidosAmistosos = remember { mutableStateOf(false) }
+                Checkbox( checked = verPartidosLiga.value,
+                    onCheckedChange = { verPartidosLiga.value = it } )
+                Text(text = "Ver partidos de la liga",
+                    modifier = Modifier.padding(start = 8.dp))
+
+                Checkbox( checked = verPartidosAmistosos.value,
+                    onCheckedChange = { verPartidosAmistosos.value = it } )
+                Text(text = "Ver partidos Amistosos",
+                    modifier = Modifier.padding(start = 8.dp))
             }
         }
     }
