@@ -2,4 +2,6 @@
     <string name="app_name">ProyectoPMDM</string>
     <string name="ayuda">Ayuda</string>
     <string name="informacion">Informacion</string>
+    <string name="SobreNosotros">Sobre Nosotros</string>
+    <string name="Info" >Informacion</string>
 </resources>
