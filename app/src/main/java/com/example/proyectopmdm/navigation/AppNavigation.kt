@@ -24,8 +24,8 @@ fun AppNavigation(){
         composable(route = AppScreens.AcercaDe.route){
             AcercaDe(navController)
         }
-        composable(route = AppScreens.SobreNosotros.route){
-            SobreNosotros(navController)
-        }
+        //composable(route = AppScreens.SobreNosotros.route){
+            //SobreNosotros(navController)
+       // }
     }
 }

@@ -69,23 +69,6 @@ fun SobreNosotros(){
                 textAlign = TextAlign.Center,
                 modifier = Modifier.fillMaxWidth() // Hace que el texto ocupe todo el ancho para centrarse
             )
-        }
-    }
-}
-
-// Previsualización clara y oscura
-@Preview(showBackground = true)
-@Composable
-fun VistaPreviaModoClaro() {
-    ProyectoPMDMTheme(darkTheme = false) {
-        SobreNosotros()
-    }
-}
-
-@Preview(showBackground = true, uiMode = android.content.res.Configuration.UI_MODE_NIGHT_YES)
-@Composable
-fun VistaPreviaModoOscuro() {
-    ProyectoPMDMTheme(darkTheme = true) {
-        SobreNosotros()
+       }
     }
 }
