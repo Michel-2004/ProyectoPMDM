@@ -68,7 +68,7 @@ fun SobreNosotros(navController: NavController){
                 style = MaterialTheme.typography.headlineMedium,
                 color = MaterialTheme.colorScheme.onBackground,
                 textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth() // Hace que el texto ocupe todo el ancho para centrarse
+                modifier = Modifier.fillMaxWidth()
             )
             Image(
                 painter = painterResource(id = R.drawable.larosaleda),
@@ -81,7 +81,7 @@ fun SobreNosotros(navController: NavController){
                 style = MaterialTheme.typography.headlineMedium,
                 color = MaterialTheme.colorScheme.onBackground,
                 textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth() // Hace que el texto ocupe todo el ancho para centrarse
+                modifier = Modifier.fillMaxWidth()
             )
         }
     }
