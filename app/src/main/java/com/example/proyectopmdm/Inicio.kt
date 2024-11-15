@@ -1,5 +1,6 @@
 package com.example.proyectopmdm
 
+import android.provider.CalendarContract.Colors
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -8,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -49,10 +51,13 @@ fun Inicio(navController: NavController) {
                 Modifier.padding(15.dp).size(width = 260.dp, height = 320.dp)
             )
 
-            Button(onClick = {navController.navigate(route = AppScreens.AcercaDe.route)})
+            Button(
+                onClick = {navController.navigate(route = AppScreens.AcercaDe.route)},
+                colors = ButtonColors(
+                    containerColor = MaterialTheme.colorScheme.onPrimaryContainer)
+            )
             {
-                Modifier.padding(5.dp).background(MaterialTheme.colorScheme.onPrimaryContainer)
-
+                Modifier.padding(5.dp)
                 Text(text = "Acerca de ")
 
             }
