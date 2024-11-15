@@ -131,10 +131,10 @@ fun Configuracion(navController: NavController) {
                         numbers.forEach {
                             number ->
                             DropdownMenuItem(
-                            text = { Text(text = number.toString()) },
-                                onClick = {
-                                    selectedNumber = number
-                                    expanded = false } )
+                                text = { Text(text = number.toString()) },
+                                    onClick = {
+                                        selectedNumber = number
+                                        expanded = false } )
                         }
                     }
                 }
