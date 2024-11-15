@@ -3,6 +3,7 @@ package com.example.proyectopmdm
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -14,6 +15,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -29,10 +33,11 @@ import androidx.compose.ui.unit.dp
 import com.example.proyectopmdm.ui.theme.ProyectoPMDMTheme
 import com.example.proyectopmdm.ui.theme.primaryLight
 import androidx.compose.material3.Text
+import androidx.navigation.NavController
 
 
 @Composable
-fun SobreNosotros(){
+fun SobreNosotros(navController: NavController){
     ProyectoPMDMTheme {
         val texto = stringResource(id = R.string.SobreNosotros)
         val texto2 = stringResource(id = R.string.Info)
@@ -48,6 +53,15 @@ fun SobreNosotros(){
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Icon(
+                imageVector = Icons.Default.ArrowBack,
+                contentDescription = "volver",
+                modifier = Modifier.clickable {
+                    navController.popBackStack()
+                }
+                    .wrapContentSize(Alignment.TopEnd)
+            )
+
             //Texto arriba
             Text(
                 text = texto,
@@ -70,22 +84,5 @@ fun SobreNosotros(){
                 modifier = Modifier.fillMaxWidth() // Hace que el texto ocupe todo el ancho para centrarse
             )
         }
-    }
-}
-
-// Previsualización clara y oscura
-@Preview(showBackground = true)
-@Composable
-fun VistaPreviaModoClaro() {
-    ProyectoPMDMTheme(darkTheme = false) {
-        SobreNosotros()
-    }
-}
-
-@Preview(showBackground = true, uiMode = android.content.res.Configuration.UI_MODE_NIGHT_YES)
-@Composable
-fun VistaPreviaModoOscuro() {
-    ProyectoPMDMTheme(darkTheme = true) {
-        SobreNosotros()
     }
 }

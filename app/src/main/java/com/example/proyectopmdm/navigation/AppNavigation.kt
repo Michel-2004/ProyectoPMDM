@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.proyectopmdm.AcercaDe
 import com.example.proyectopmdm.Configuracion
 import com.example.proyectopmdm.Inicio
+import com.example.proyectopmdm.SobreNosotros
 
 @Composable
 fun AppNavigation(){
@@ -22,6 +23,9 @@ fun AppNavigation(){
 
         composable(route = AppScreens.AcercaDe.route){
             AcercaDe(navController)
+        }
+        composable(route = AppScreens.SobreNosotros.route){
+            SobreNosotros(navController)
         }
     }
 }

@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
@@ -66,31 +67,33 @@ fun Configuracion(navController: NavController) {
                 verticalAlignment = Alignment.CenterVertically
 
             ) {
-                val radioOptions = listOf("Hombre", "Mujer", "Otros")
-                val (selectedOption, onOptionSelected) = remember { mutableStateOf(radioOptions[1] ) }
+                val genero = remember { mutableStateOf("") }
+                RadioButton( selected = genero.value == "Masculino",
+                    onClick = { genero.value = "Masculino" } )
+                Text(text = "Masculino",
+                    modifier = Modifier.padding(start = 8.dp))
 
-                radioOptions.forEach { text ->
-                    Row(
-                        Modifier
-                            .fillMaxWidth()
-                            .selectable(
-                                selected = (text == selectedOption),
-                                onClick = {
-                                    onOptionSelected(text)
-                                }
-                            )
-                            .padding(horizontal = 16.dp)
-                    ) {
-                        RadioButton(
-                            selected = (text == selectedOption),
-                            onClick = { onOptionSelected(text) }
-                        )
-                        Text(
-                            text = text,
-                            modifier = Modifier.padding(start = 16.dp)
-                        )
-                    }
-                }
+                RadioButton( selected =genero.value == "Femenino",
+                    onClick = { genero.value = "Femenino" } )
+                Text(text = "Femenino",
+                    modifier = Modifier.padding(start = 8.dp))
+
+            }
+            Column(
+                modifier = Modifier.fillMaxSize()
+                    .wrapContentSize(Alignment.Center)
+            ){
+                val verPartidosLiga = remember { mutableStateOf(false) }
+                val verPartidosAmistosos = remember { mutableStateOf(false) }
+                Checkbox( checked = verPartidosLiga.value,
+                    onCheckedChange = { verPartidosLiga.value = it } )
+                Text(text = "Ver partidos de la liga",
+                    modifier = Modifier.padding(start = 8.dp))
+
+                Checkbox( checked = verPartidosAmistosos.value,
+                    onCheckedChange = { verPartidosAmistosos.value = it } )
+                Text(text = "Ver partidos Amistosos",
+                    modifier = Modifier.padding(start = 8.dp))
             }
         }
     }

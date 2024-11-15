@@ -1,7 +1,7 @@
 package com.example.proyectopmdm.datos
 
 
-
+/*
 import android.content.Context
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.intPreferencesKey
@@ -50,3 +50,4 @@ class ConfiguracionDataStore(private val context: Context) {
         }
     }
 }
+*/
