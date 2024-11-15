@@ -93,9 +93,6 @@ fun Configuracion(navController: NavController) {
                 modifier = Modifier.fillMaxSize()
                     .wrapContentSize(Alignment.Center)
             ){
-                var expanded by remember { mutableStateOf(false) }
-                var selectedNumber by remember { mutableStateOf(1) }
-                val numbers = listOf(1, 2, 3)
                 val verPartidosLiga = remember { mutableStateOf(false) }
                 val verPartidosAmistosos = remember { mutableStateOf(false) }
                 Checkbox( checked = verPartidosLiga.value,
@@ -115,14 +112,20 @@ fun Configuracion(navController: NavController) {
                         text = "Ver partidos internacionales",
                         modifier = Modifier.padding(end = 8.dp)
                     )
+
+                var expanded by remember { mutableStateOf(false) }
+                var selectedNumber by remember { mutableStateOf(1) }
+                val numbers = listOf(1, 2, 3)
                 ExposedDropdownMenuBox( expanded = expanded,
                     onExpandedChange = { expanded = !expanded } ) {
-                        TextField( value = selectedNumber.toString(),
+
+                    TextField( value = selectedNumber.toString(),
                             onValueChange = {},
                             readOnly = true,
                             label = {
                                 Text("Número") },
-                                    trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) },
+                                    trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(
+                                        expanded = expanded) },
                                     colors = ExposedDropdownMenuDefaults.textFieldColors() )
 
                     ExposedDropdownMenu(
