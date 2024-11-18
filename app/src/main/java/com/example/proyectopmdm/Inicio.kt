@@ -84,7 +84,7 @@ fun Inicio(navController: NavController) {
             )
             {
                 Modifier.padding(5.dp)
-                Text(text = "Sobre NosotrosS")
+                Text(text = "Sobre Nosotros")
 
             }
 
