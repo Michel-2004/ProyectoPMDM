@@ -14,4 +14,5 @@
     <string name="partidos_internacionales">Partidos Internacionales</string>
     <string name="numero"> Numero </string>
     <string name="guardar"> Guardar</string>
+    <string name="guardar_configuracion" >Guardar</string>
 </resources>

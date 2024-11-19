@@ -15,4 +15,5 @@
     <string name="partidos_internacionales">Internacinal Matches</string>
     <string name="numero"> Number </string>
     <string name="guardar"> Save</string>
+    <string name="guardar_configuracion" >Save</string>
 </resources>

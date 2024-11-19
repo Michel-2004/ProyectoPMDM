@@ -1,68 +1,66 @@
-package com.example.proyectopmdm.datos
-
 import android.content.Context
 import androidx.datastore.preferences.core.*
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-// Crear un DataStore específico para configuración
-private val Context.configDataStore by preferencesDataStore(name = "configuracion_prefs")
+// Acceso a DataStore
+private val Context.dataStore by preferencesDataStore(name = "configuracion_prefs")
+
+object PreferencesKeys {
+    val genero = stringPreferencesKey("genero")
+    val verPartidosLiga = booleanPreferencesKey("ver_partidos_liga")
+    val verPartidosAmistosos = booleanPreferencesKey("ver_partidos_amistosos")
+    val verPartidosInternacionales = booleanPreferencesKey("ver_partidos_internacionales")
+    val numeroSeleccionado = intPreferencesKey("numero_seleccionado")
+}
 
 class ConfiguracionDataStore(private val context: Context) {
 
-    // Claves para las preferencias
-    companion object {
-        val GENERO_KEY = stringPreferencesKey("genero")
-        val LIGA_KEY = booleanPreferencesKey("liga")
-        val AMISTOSOS_KEY = booleanPreferencesKey("amistosos")
-        val INTERNACIONALES_KEY = booleanPreferencesKey("internacionales")
-        val NUMERO_KEY = intPreferencesKey("numero_seleccionado")
-    }
+    // Recuperar el valor de genero (String)
+    val genero: Flow<String?> = context.dataStore.data
+        .map { preferences -> preferences[PreferencesKeys.genero] }
 
-    // Guardar género
+    // Recuperar el valor de verPartidosLiga (Boolean)
+    val verPartidosLiga: Flow<Boolean> = context.dataStore.data
+        .map { preferences -> preferences[PreferencesKeys.verPartidosLiga] ?: false }
+
+    // Recuperar el valor de verPartidosAmistosos (Boolean)
+    val verPartidosAmistosos: Flow<Boolean> = context.dataStore.data
+        .map { preferences -> preferences[PreferencesKeys.verPartidosAmistosos] ?: false }
+
+    // Recuperar el valor de verPartidosInternacionales (Boolean)
+    val verPartidosInternacionales: Flow<Boolean> = context.dataStore.data
+        .map { preferences -> preferences[PreferencesKeys.verPartidosInternacionales] ?: false }
+
+    // Recuperar el valor de numeroSeleccionado (Int)
+    val numeroSeleccionado: Flow<Int> = context.dataStore.data
+        .map { preferences -> preferences[PreferencesKeys.numeroSeleccionado] ?: 1 }
+
+    // Guardar el valor de genero
     suspend fun guardarGenero(genero: String) {
-        context.configDataStore.edit { preferences ->
-            preferences[GENERO_KEY] = genero
+        context.dataStore.edit { preferences ->
+            preferences[PreferencesKeys.genero] = genero
         }
     }
 
-    // Guardar visibilidad de partidos
-    suspend fun guardarVisibilidadPartidos(liga: Boolean, amistosos: Boolean, internacionales: Boolean) {
-        context.configDataStore.edit { preferences ->
-            preferences[LIGA_KEY] = liga
-            preferences[AMISTOSOS_KEY] = amistosos
-            preferences[INTERNACIONALES_KEY] = internacionales
+    // Guardar la visibilidad de los partidos
+    suspend fun guardarVisibilidadPartidos(
+        verPartidosLiga: Boolean,
+        verPartidosAmistosos: Boolean,
+        verPartidosInternacionales: Boolean
+    ) {
+        context.dataStore.edit { preferences ->
+            preferences[PreferencesKeys.verPartidosLiga] = verPartidosLiga
+            preferences[PreferencesKeys.verPartidosAmistosos] = verPartidosAmistosos
+            preferences[PreferencesKeys.verPartidosInternacionales] = verPartidosInternacionales
         }
     }
 
-    // Guardar número seleccionado
+    // Guardar el numero seleccionado
     suspend fun guardarNumeroSeleccionado(numero: Int) {
-        context.configDataStore.edit { preferences ->
-            preferences[NUMERO_KEY] = numero
+        context.dataStore.edit { preferences ->
+            preferences[PreferencesKeys.numeroSeleccionado] = numero
         }
-    }
-
-    // Recuperar género
-    val genero: Flow<String?> = context.configDataStore.data.map { preferences ->
-        preferences[GENERO_KEY]
-    }
-
-    // Recuperar visibilidad de partidos
-    val verPartidosLiga: Flow<Boolean> = context.configDataStore.data.map { preferences ->
-        preferences[LIGA_KEY] ?: false
-    }
-
-    val verPartidosAmistosos: Flow<Boolean> = context.configDataStore.data.map { preferences ->
-        preferences[AMISTOSOS_KEY] ?: false
-    }
-
-    val verPartidosInternacionales: Flow<Boolean> = context.configDataStore.data.map { preferences ->
-        preferences[INTERNACIONALES_KEY] ?: false
-    }
-
-    // Recuperar número seleccionado
-    val numeroSeleccionado: Flow<Int> = context.configDataStore.data.map { preferences ->
-        preferences[NUMERO_KEY] ?: 1
     }
 }
