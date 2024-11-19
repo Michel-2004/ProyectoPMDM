@@ -19,6 +19,7 @@ import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -29,6 +30,7 @@ import com.example.proyectopmdm.navigation.AppNavigation
 import com.example.proyectopmdm.navigation.AppScreens
 import com.example.proyectopmdm.ui.theme.ProyectoPMDMTheme
 import com.example.proyectopmdm.ui.theme.backgroundLight
+import com.example.proyectopmdm.ui.theme.onPrimaryLight
 import com.example.proyectopmdm.ui.theme.primaryLight
 
 @Composable
@@ -36,12 +38,12 @@ fun Inicio(navController: NavController) {
     ProyectoPMDMTheme {
 
         Column(
-            modifier = Modifier.fillMaxSize().background(primaryLight)
+            modifier = Modifier.fillMaxSize().background(backgroundLight)
                 .wrapContentSize(Alignment.TopCenter).padding(15.dp)
         ) {
             Text(
                 modifier = Modifier.align(CenterHorizontally),
-                text = "Inicio",
+                text = stringResource(id = R.string.inicio),
                 fontWeight = FontWeight.Bold,
                 fontSize = 45.sp,
                 color = MaterialTheme.colorScheme.onPrimaryContainer,
@@ -61,7 +63,7 @@ fun Inicio(navController: NavController) {
             )
             {
                 Modifier.padding(5.dp).fillMaxSize()
-                Text(text = "Acerca de ")
+                Text(text = stringResource( id = R.string.acercaDe))
 
             }
 
@@ -73,7 +75,7 @@ fun Inicio(navController: NavController) {
             )
             {
                 Modifier.padding(5.dp)
-                Text(text = "Configuracion")
+                Text(text = stringResource(id = R.string.configuracion_titulo))
 
             }
             Button(
@@ -84,7 +86,7 @@ fun Inicio(navController: NavController) {
             )
             {
                 Modifier.padding(5.dp)
-                Text(text = "Sobre Nosotros")
+                Text(text = stringResource(id = R.string.SobreNosotros))
 
             }
 

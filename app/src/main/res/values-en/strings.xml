@@ -15,4 +15,8 @@
     <string name="partidos_internacionales">Internacinal Matches</string>
     <string name="numero"> Number </string>
     <string name="guardar"> Save</string>
+    <string name="textoGuardado"> Saved</string>
+    <string name="inicio">Home</string>
+    <string name="acercaDe"> About that</string>
+    <string name="configuracion"> Configuration</string>
 </resources>

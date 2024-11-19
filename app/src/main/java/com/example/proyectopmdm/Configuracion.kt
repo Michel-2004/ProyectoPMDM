@@ -3,6 +3,7 @@
 package com.example.proyectopmdm
 
 import android.widget.RadioGroup
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -20,7 +21,6 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.proyectopmdm.datos.DataStore
 import com.example.proyectopmdm.ui.theme.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -33,6 +33,7 @@ fun Configuracion(navController: NavController) {
     // Crear una instancia del DataStore
     val context = LocalContext.current
     val configuracionDataStore = ConfiguracionDataStore(context)
+    val scope = rememberCoroutineScope()
 
     // Estados para mostrar datos guardados
     val generoGuardado by configuracionDataStore.genero.collectAsState(initial = "")
@@ -51,17 +52,10 @@ fun Configuracion(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = MaterialTheme.colorScheme.background) // Fondo adaptativo
+            .background(MaterialTheme.colorScheme.background) // Fondo adaptativo
             .padding(16.dp)
     ) {
-        // Icono de volver
-        Icon(
-            imageVector = Icons.Default.ArrowBack,
-            contentDescription = stringResource(id = R.string.volver),
-            modifier = Modifier
-                .clickable { navController.popBackStack() }
-                .wrapContentSize(Alignment.TopEnd)
-        )
+
 
         // Título
         Text(
@@ -71,6 +65,14 @@ fun Configuracion(navController: NavController) {
             color = MaterialTheme.colorScheme.onBackground,
             fontFamily = FontFamily.Serif,
             style = MaterialTheme.typography.headlineSmall
+        )
+        // Icono de volver
+        Icon(
+            imageVector = Icons.Default.ArrowBack,
+            contentDescription = stringResource(id = R.string.volver),
+            modifier = Modifier
+                .clickable { navController.popBackStack() }
+                .wrapContentSize(Alignment.TopEnd)
         )
 
         // Imagen
@@ -90,7 +92,8 @@ fun Configuracion(navController: NavController) {
             // Opciones de género
             RadioButton(
                 selected = genero.value == "Masculino",
-                onClick = { genero.value = "Masculino" }
+                onClick = { genero.value = "Masculino"
+                }
             )
             Text(
                 text = stringResource(id = R.string.genero_masculino),
@@ -186,10 +189,19 @@ fun Configuracion(navController: NavController) {
                         )
                         configuracionDataStore.guardarNumeroSeleccionado(selectedNumber.value)
                     }
+                    val text = R.string.textoGuardado
+                    val duration = Toast.LENGTH_SHORT
+                    val toast = Toast.makeText(context, text, duration) // in Activity
+                    toast.show()
+
                 },
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.onPrimaryContainer
+                ),
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
                     .padding(top = 16.dp)
+
             ) {
                 Text(text = stringResource(id = R.string.guardar))
             }

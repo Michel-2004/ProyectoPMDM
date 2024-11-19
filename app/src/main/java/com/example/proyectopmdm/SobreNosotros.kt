@@ -33,6 +33,8 @@ import androidx.compose.ui.unit.dp
 import com.example.proyectopmdm.ui.theme.ProyectoPMDMTheme
 import com.example.proyectopmdm.ui.theme.primaryLight
 import androidx.compose.material3.Text
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 
@@ -53,6 +55,16 @@ fun SobreNosotros(navController: NavController){
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            //Texto arriba
+            Text(
+                text = texto,
+                style = MaterialTheme.typography.headlineMedium,
+                color = MaterialTheme.colorScheme.onPrimaryContainer,
+                textAlign = TextAlign.Center,
+                fontSize = 45.sp,
+                fontFamily = FontFamily.Serif,
+                modifier = Modifier.fillMaxWidth()
+            )
             Icon(
                 imageVector = Icons.Default.ArrowBack,
                 contentDescription = "volver",
@@ -60,15 +72,6 @@ fun SobreNosotros(navController: NavController){
                     navController.popBackStack()
                 }
                     .wrapContentSize(Alignment.TopEnd)
-            )
-
-            //Texto arriba
-            Text(
-                text = texto,
-                style = MaterialTheme.typography.headlineMedium,
-                color = MaterialTheme.colorScheme.onBackground,
-                textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth()
             )
             Image(
                 painter = painterResource(id = R.drawable.larosaleda),
