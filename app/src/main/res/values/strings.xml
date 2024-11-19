@@ -9,6 +9,9 @@
     <string name="ajustes"> Ajustes </string>
     <string name="genero_masculino"> Hombre </string>
     <string name="genero_femenino"> Mujer </string>
-    <string name="partidos_liga"> Liga </string>
-    <string name="partidos_amistosos"> Amistosos </string>
+    <string name="partidos_liga"> Partidos Liga </string>
+    <string name="partidos_amistosos"> Partidos Amistosos </string>
+    <string name="partidos_internacionales">Partidos Internacionales</string>
+    <string name="numero"> Numero </string>
+    <string name="guardar"> Guardar</string>
 </resources>
