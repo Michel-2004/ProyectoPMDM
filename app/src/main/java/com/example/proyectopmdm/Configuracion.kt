@@ -79,13 +79,9 @@ fun Configuracion(navController: NavController) {
             fontWeight = FontWeight.Bold,
             modifier = Modifier.align(Alignment.CenterHorizontally)
         )
-        // Icono de volver
-        Icon(
-            imageVector = Icons.Default.ArrowBack,
-            contentDescription = stringResource(id = R.string.volver),
-            modifier = Modifier
-                .clickable { navController.popBackStack() }
-                .wrapContentSize(Alignment.TopEnd)
+        Image(
+            painter = painterResource(id = R.drawable.ajustes),
+            contentDescription = "ajustes",
         )
 
         Spacer(modifier = Modifier.height(16.dp))
