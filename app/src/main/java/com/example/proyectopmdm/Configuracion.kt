@@ -27,6 +27,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import androidx.compose.ui.platform.LocalContext
+import android.widget.Toast
 
 @Composable
 fun Configuracion(navController: NavController) {
@@ -40,14 +41,12 @@ fun Configuracion(navController: NavController) {
     val verInternacionalesGuardado by configuracionDataStore.verPartidosInternacionales.collectAsState(initial = false)
     val numeroGuardado by configuracionDataStore.numeroSeleccionado.collectAsState(initial = 1)
 
-    // Variables de estado para UI
     val genero = remember { mutableStateOf(generoGuardado ?: "") }
     val verPartidosLiga = remember { mutableStateOf(verLigaGuardado) }
     val verPartidosAmistosos = remember { mutableStateOf(verAmistososGuardado) }
     val verPartidosInternacionales = remember { mutableStateOf(verInternacionalesGuardado) }
     val selectedNumber = remember { mutableStateOf(numeroGuardado) }
 
-    // Sincronizar los valores iniciales con los estados
     LaunchedEffect(generoGuardado, verLigaGuardado, verAmistososGuardado, verInternacionalesGuardado, numeroGuardado) {
         genero.value = generoGuardado ?: ""
         verPartidosLiga.value = verLigaGuardado
@@ -62,7 +61,6 @@ fun Configuracion(navController: NavController) {
             .background(MaterialTheme.colorScheme.background)
             .padding(16.dp)
     ) {
-        // Icono para volver
         Icon(
             imageVector = Icons.Default.ArrowBack,
             contentDescription = stringResource(id = R.string.volver),
@@ -71,7 +69,6 @@ fun Configuracion(navController: NavController) {
                 .align(Alignment.Start)
         )
 
-        // Título
         Text(
             text = stringResource(id = R.string.configuracion_titulo),
             fontWeight = FontWeight.Bold,
@@ -80,7 +77,6 @@ fun Configuracion(navController: NavController) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Género (RadioButton)
         Row(
             modifier = Modifier.align(Alignment.CenterHorizontally),
             verticalAlignment = Alignment.CenterVertically
@@ -102,7 +98,6 @@ fun Configuracion(navController: NavController) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Checkboxes para partidos
         Row(verticalAlignment = Alignment.CenterVertically) {
             Checkbox(
                 checked = verPartidosLiga.value,
@@ -129,7 +124,6 @@ fun Configuracion(navController: NavController) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Dropdown para número seleccionado
         var expanded by remember { mutableStateOf(false) }
         val options = (1..5).toList()
 
@@ -163,23 +157,23 @@ fun Configuracion(navController: NavController) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Botón para guardar configuraciones
         Button(onClick = {
+            if (genero.value.isNotEmpty()) {
+
+                Toast.makeText(context, "Configuración guardada correctamente", Toast.LENGTH_LONG).show()
+                navController.navigate("Inicio")
+            } else {
+                Toast.makeText(context, "Por favor, selecciona un género", Toast.LENGTH_SHORT).show()
+            }
+
             CoroutineScope(Dispatchers.IO).launch {
-                configuracionDataStore.guardarGenero(genero.value ?: "")
+                configuracionDataStore.guardarGenero(genero.value)
                 configuracionDataStore.guardarVisibilidadPartidos(
                     verPartidosLiga.value,
                     verPartidosAmistosos.value,
                     verPartidosInternacionales.value
                 )
                 configuracionDataStore.guardarNumeroSeleccionado(selectedNumber.value)
-
-                Log.d(
-                    "Configuracion",
-                    "Guardado: Genero=${genero.value}, Liga=${verPartidosLiga.value}, " +
-                            "Amistosos=${verPartidosAmistosos.value}, Internacionales=${verPartidosInternacionales.value}, " +
-                            "Numero=${selectedNumber.value}"
-                )
             }
         }) {
             Text(text = stringResource(id = R.string.guardar))
