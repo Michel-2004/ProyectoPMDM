@@ -17,6 +17,9 @@
     <string name="guardar"> Save</string>
     <string name="textoGuardado"> Saved</string>
     <string name="inicio">Home</string>
-    <string name="acercaDe"> About that</string>
-    <string name="configuracion"> Configuration</string>
+    <string name="acercaDe">About that</string>
+    <string name="configuracion">Configuration</string>
+    <string name="salir">Exit</string>
+    <string name="continuar">Continue</string>
+    <string name="textoSalir"> ¿Are you sure?</string>
 </resources>

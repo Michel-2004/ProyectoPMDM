@@ -18,4 +18,7 @@
     <string name="inicio">Inicio</string>
     <string name="acercaDe"> Acerca De</string>
     <string name="configuracion"> Configuracion</string>
+    <string name="salir"> Salir</string>
+    <string name="continuar"> Continuar</string>
+    <string name="textoSalir"> ¿Realmente quiere salir?</string>
 </resources>
