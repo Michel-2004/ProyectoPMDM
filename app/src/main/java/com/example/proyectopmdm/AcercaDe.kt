@@ -27,13 +27,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.proyectopmdm.ui.theme.ProyectoPMDMTheme
+import com.example.proyectopmdm.ui.theme.backgroundLight
 import com.example.proyectopmdm.ui.theme.primaryLight
 
 @Composable
 fun AcercaDe(navController: NavController) {
     ProyectoPMDMTheme {
 
-        Column(modifier = Modifier.fillMaxSize().background(primaryLight).wrapContentSize(Alignment.Center).padding(20.dp)) {
+        Column(modifier = Modifier.fillMaxSize().background(backgroundLight).wrapContentSize(Alignment.Center).padding(20.dp)) {
             Icon(
                 imageVector = Icons.Default.ArrowBack,
                 contentDescription = "volver",

@@ -5,6 +5,7 @@ package com.example.proyectopmdm
 import ConfiguracionDataStore
 import android.util.Log
 import android.widget.RadioGroup
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -33,6 +34,7 @@ import android.widget.Toast
 fun Configuracion(navController: NavController) {
     val context = LocalContext.current
     val configuracionDataStore = ConfiguracionDataStore(context)
+    val scope = rememberCoroutineScope()
 
     // Estados inicializados con valores predeterminados
     val generoGuardado by configuracionDataStore.genero.collectAsState(initial = "")
@@ -74,6 +76,10 @@ fun Configuracion(navController: NavController) {
             fontWeight = FontWeight.Bold,
             modifier = Modifier.align(Alignment.CenterHorizontally)
         )
+        Image(
+            painter = painterResource(id = R.drawable.ajustes),
+            contentDescription = "ajustes",
+        )
 
         Spacer(modifier = Modifier.height(16.dp))
 
@@ -83,7 +89,8 @@ fun Configuracion(navController: NavController) {
         ) {
             RadioButton(
                 selected = genero.value == "Masculino",
-                onClick = { genero.value = "Masculino" }
+                onClick = { genero.value = "Masculino"
+                }
             )
             Text(text = stringResource(id = R.string.genero_masculino))
 
