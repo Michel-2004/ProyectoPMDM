@@ -3,10 +3,12 @@ package com.example.proyectopmdm
 import android.provider.CalendarContract.Colors
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -43,7 +45,9 @@ fun Inicio(navController: NavController) {
         val openDialog = remember { mutableStateOf(false) }
         Column(
             modifier = Modifier.fillMaxSize().background(backgroundLight)
-                .wrapContentSize(Alignment.TopCenter).padding(15.dp)
+                .wrapContentSize(Alignment.TopCenter).padding(15.dp),
+            verticalArrangement = Arrangement.spacedBy(15.dp, Alignment.CenterVertically),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
                 modifier = Modifier.align(CenterHorizontally),
@@ -61,47 +65,49 @@ fun Inicio(navController: NavController) {
 
             Button(
                 onClick = {navController.navigate(route = AppScreens.AcercaDe.route)},
+                modifier = Modifier.padding(5.dp).width(200.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = MaterialTheme.colorScheme.onPrimaryContainer
                 )
             )
             {
-                Modifier.padding(5.dp).fillMaxSize()
+
                 Text(text = stringResource( id = R.string.acercaDe))
 
             }
 
             Button(
                 onClick = {navController.navigate(route = AppScreens.Configuracion.route)},
+                modifier = Modifier.padding(5.dp).width(200.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = MaterialTheme.colorScheme.onPrimaryContainer
                 )
             )
             {
-                Modifier.padding(5.dp)
                 Text(text = stringResource(id = R.string.configuracion_titulo))
 
             }
             Button(
                 onClick = {navController.navigate(route = AppScreens.SobreNosotros.route)},
+                modifier = Modifier.padding(5.dp).width(200.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = MaterialTheme.colorScheme.onPrimaryContainer
                 )
             )
             {
-                Modifier.padding(5.dp)
+
                 Text(text = stringResource(id = R.string.SobreNosotros))
 
             }
 
             Button(
                 onClick = {openDialog.value = true},
+                modifier = Modifier.padding(5.dp).width(200.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = MaterialTheme.colorScheme.onPrimaryContainer
                 )
             )
             {
-                Modifier.padding(5.dp)
                 Text(text = stringResource(id = R.string.salir))
 
             }

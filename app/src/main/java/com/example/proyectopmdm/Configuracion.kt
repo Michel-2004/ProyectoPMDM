@@ -58,24 +58,31 @@ fun Configuracion(navController: NavController) {
     }
 
     Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background)
-            .padding(16.dp)
+        modifier = Modifier.fillMaxSize().background(backgroundLight)
+            .wrapContentSize(Alignment.TopCenter).padding(15.dp),
+        verticalArrangement = Arrangement.spacedBy(15.dp, Alignment.CenterVertically),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Icon(
-            imageVector = Icons.Default.ArrowBack,
-            contentDescription = stringResource(id = R.string.volver),
+        Row(
             modifier = Modifier
-                .clickable { navController.popBackStack() }
-                .align(Alignment.Start)
-        )
+                .wrapContentSize(Alignment.TopCenter).padding(15.dp),
+        ) {
+            // Icono para volver
+            Icon(
+                imageVector = Icons.Default.ArrowBack,
+                contentDescription = stringResource(id = R.string.volver),
+                modifier = Modifier
+                    .clickable { navController.popBackStack() }
 
-        Text(
-            text = stringResource(id = R.string.configuracion_titulo),
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier.align(Alignment.CenterHorizontally)
-        )
+            )
+            // Título
+            Text(
+                text = stringResource(id = R.string.configuracion_titulo),
+                fontWeight = FontWeight.Bold,
+            )
+        }
+
+
         Image(
             painter = painterResource(id = R.drawable.ajustes),
             contentDescription = "ajustes",
