@@ -1,0 +1,254 @@
+[
+  {
+    "numero": 1,
+    "nombre": "Juan Soriano",
+    "posicion": "Portero",
+    "nacionalidad": "España",
+    "altura": 1.88,
+    "valorMercado": 1500000,
+    "img": "https://example.com/juan_soriano.jpg"
+  },
+  {
+    "numero": 2,
+    "nombre": "Victor Gómez",
+    "posicion": "Defensa",
+    "nacionalidad": "España",
+    "altura": 1.78,
+    "valorMercado": 2000000,
+    "img": "https://example.com/victor_gomez.jpg"
+  },
+  {
+    "numero": 3,
+    "nombre": "Sergio Pérez",
+    "posicion": "Centrocampista",
+    "nacionalidad": "España",
+    "altura": 1.80,
+    "valorMercado": 1000000,
+    "img": "https://example.com/sergio_perez.jpg"
+  },
+  {
+    "numero": 4,
+    "nombre": "José Rodríguez",
+    "posicion": "Centrocampista",
+    "nacionalidad": "España",
+    "altura": 1.82,
+    "valorMercado": 1800000,
+    "img": "https://example.com/jose_rodriguez.jpg"
+  },
+  {
+    "numero": 5,
+    "nombre": "Dani Martín",
+    "posicion": "Portero",
+    "nacionalidad": "España",
+    "altura": 1.85,
+    "valorMercado": 1200000,
+    "img": "https://example.com/dani_martin.jpg"
+  },
+  {
+    "numero": 6,
+    "nombre": "Alejandro Sanz",
+    "posicion": "Defensa",
+    "nacionalidad": "España",
+    "altura": 1.83,
+    "valorMercado": 1300000,
+    "img": "https://example.com/alejandro_sanz.jpg"
+  },
+  {
+    "numero": 7,
+    "nombre": "Álvaro Vadillo",
+    "posicion": "Delantero",
+    "nacionalidad": "España",
+    "altura": 1.75,
+    "valorMercado": 2500000,
+    "img": "https://example.com/alvaro_vadillo.jpg"
+  },
+  {
+    "numero": 8,
+    "nombre": "Pablo Chavarría",
+    "posicion": "Delantero",
+    "nacionalidad": "Argentina",
+    "altura": 1.82,
+    "valorMercado": 1200000,
+    "img": "https://example.com/pablo_chavarria.jpg"
+  },
+  {
+    "numero": 9,
+    "nombre": "Carlos Fernández",
+    "posicion": "Delantero",
+    "nacionalidad": "España",
+    "altura": 1.80,
+    "valorMercado": 3000000,
+    "img": "https://example.com/carlos_fernandez.jpg"
+  },
+  {
+    "numero": 10,
+    "nombre": "Ismael Casas",
+    "posicion": "Defensa",
+    "nacionalidad": "España",
+    "altura": 1.84,
+    "valorMercado": 1700000,
+    "img": "https://example.com/ismael_casas.jpg"
+  },
+  {
+    "numero": 11,
+    "nombre": "Cristo González",
+    "posicion": "Delantero",
+    "nacionalidad": "España",
+    "altura": 1.78,
+    "valorMercado": 900000,
+    "img": "https://example.com/cristo_gonzalez.jpg"
+  },
+  {
+    "numero": 12,
+    "nombre": "Luis Muñoz",
+    "posicion": "Centrocampista",
+    "nacionalidad": "España",
+    "altura": 1.76,
+    "valorMercado": 2200000,
+    "img": "https://example.com/luis_munoz.jpg"
+  },
+  {
+    "numero": 13,
+    "nombre": "Álex Martín",
+    "posicion": "Defensa",
+    "nacionalidad": "España",
+    "altura": 1.81,
+    "valorMercado": 1000000,
+    "img": "https://example.com/alex_martin.jpg"
+  },
+  {
+    "numero": 14,
+    "nombre": "José Ángel Esmorís Tasende",
+    "posicion": "Defensa",
+    "nacionalidad": "España",
+    "altura": 1.77,
+    "valorMercado": 2500000,
+    "img": "https://example.com/jose_angel_tasende.jpg"
+  },
+  {
+    "numero": 15,
+    "nombre": "Jonathan Rodríguez",
+    "posicion": "Delantero",
+    "nacionalidad": "Uruguay",
+    "altura": 1.79,
+    "valorMercado": 1800000,
+    "img": "https://example.com/jonathan_rodriguez.jpg"
+  },
+  {
+    "numero": 16,
+    "nombre": "Raúl Navas",
+    "posicion": "Defensa",
+    "nacionalidad": "España",
+    "altura": 1.84,
+    "valorMercado": 1200000,
+    "img": "https://example.com/raul_navas.jpg"
+  },
+  {
+    "numero": 17,
+    "nombre": "Luis Hernández",
+    "posicion": "Defensa",
+    "nacionalidad": "España",
+    "altura": 1.90,
+    "valorMercado": 1500000,
+    "img": "https://example.com/luis_hernandez.jpg"
+  },
+  {
+    "numero": 18,
+    "nombre": "Ricardo Horta",
+    "posicion": "Delantero",
+    "nacionalidad": "Portugal",
+    "altura": 1.78,
+    "valorMercado": 2800000,
+    "img": "https://example.com/ricardo_horta.jpg"
+  },
+  {
+    "numero": 19,
+    "nombre": "Adrián González",
+    "posicion": "Centrocampista",
+    "nacionalidad": "España",
+    "altura": 1.81,
+    "valorMercado": 1000000,
+    "img": "https://example.com/adrian_gonzalez.jpg"
+  },
+  {
+    "numero": 20,
+    "nombre": "José Morente",
+    "posicion": "Centrocampista",
+    "nacionalidad": "España",
+    "altura": 1.79,
+    "valorMercado": 1300000,
+    "img": "https://example.com/jose_morente.jpg"
+  },
+  {
+    "numero": 21,
+    "nombre": "Daniel Lasure",
+    "posicion": "Defensa",
+    "nacionalidad": "España",
+    "altura": 1.85,
+    "valorMercado": 1000000,
+    "img": "https://example.com/daniel_lasure.jpg"
+  },
+  {
+    "numero": 22,
+    "nombre": "Alejandro Benítez",
+    "posicion": "Delantero",
+    "nacionalidad": "España",
+    "altura": 1.77,
+    "valorMercado": 800000,
+    "img": "https://example.com/alejandro_benitez.jpg"
+  },
+  {
+    "numero": 23,
+    "nombre": "José Ángel",
+    "posicion": "Centrocampista",
+    "nacionalidad": "España",
+    "altura": 1.82,
+    "valorMercado": 1500000,
+    "img": "https://example.com/jose_angel.jpg"
+  },
+  {
+    "numero": 24,
+    "nombre": "Mikel Villanueva",
+    "posicion": "Defensa",
+    "nacionalidad": "Venezuela",
+    "altura": 1.86,
+    "valorMercado": 1400000,
+    "img": "https://example.com/mikel_villanueva.jpg"
+  },
+  {
+    "numero": 25,
+    "nombre": "Alejandro Delgado",
+    "posicion": "Centrocampista",
+    "nacionalidad": "España",
+    "altura": 1.80,
+    "valorMercado": 1100000,
+    "img": "https://example.com/alejandro_delgado.jpg"
+  },
+  {
+    "numero": 26,
+    "nombre": "Juan Ramón",
+    "posicion": "Portero",
+    "nacionalidad": "España",
+    "altura": 1.89,
+    "valorMercado": 900000,
+    "img": "https://example.com/juan_ramón.jpg"
+  },
+  {
+    "numero": 27,
+    "nombre": "José Luis Rodríguez",
+    "posicion": "Delantero",
+    "nacionalidad": "España",
+    "altura": 1.81,
+    "valorMercado": 1300000,
+    "img": "https://example.com/jose_luis_rodriguez.jpg"
+  },
+  {
+    "numero": 28,
+    "nombre": "José Manuel",
+    "posicion": "Centrocampista",
+    "nacionalidad": "España",
+    "altura": 1.78,
+    "valorMercado": 900000,
+    "img": "https://example.com/jose_manuel.jpg"
+  }
+]
