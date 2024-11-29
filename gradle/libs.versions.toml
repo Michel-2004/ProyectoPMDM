@@ -13,6 +13,7 @@ datastorePreferencesCoreJvm = "1.1.1"
 preference = "1.2.1"
 navigationRuntimeKtx = "2.8.4"
 runtimeLivedata = "1.7.5"
+volley = "1.2.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -32,6 +33,7 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 androidx-preference = { group = "androidx.preference", name = "preference", version.ref = "preference" }
 androidx-navigation-runtime-ktx = { group = "androidx.navigation", name = "navigation-runtime-ktx", version.ref = "navigationRuntimeKtx" }
 androidx-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "runtimeLivedata" }
+volley = { group = "com.android.volley", name = "volley", version.ref = "volley" }
 
 
 [plugins]

@@ -1,30 +1,21 @@
 package com.example.proyectopmdm.jugadores
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Text
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
-import coil3.compose.AsyncImage
-import coil3.request.ImageRequest
-import coil3.request.crossfade
-import com.example.proyectopmdm.ui.theme.backgroundLight
-import java.lang.reflect.Modifier
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 
 @Composable
 fun jugadoresView(viewModel: JugadoresViewModel) {
@@ -33,31 +24,80 @@ fun jugadoresView(viewModel: JugadoresViewModel) {
     LaunchedEffect(Unit) {
         viewModel.fetchJugadores()
     }
-    Column(modifier = androidx.compose.ui.Modifier.fillMaxSize().background(backgroundLight)
-        .wrapContentSize(Alignment.TopCenter).padding(15.dp),
-        verticalArrangement = Arrangement.spacedBy(15.dp, Alignment.CenterVertically),
-        horizontalAlignment = Alignment.CenterHorizontally
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
     ) {
         if (jugadores.isEmpty()) {
-            Text(text = "Cargando...")
-        }
-        else{
-            LazyColumn{
-                items(jugadores) { jugadores ->
-                    AsyncImage(
-                        model = ImageRequest.Builder(LocalContext.current)
-                            .data(jugadores.img.replace("http://", "https://"))
-                            .crossfade(true)
-                            .build(),
-                        contentDescription = jugadores.nombre,
-                        contentScale = ContentScale.Fit
-                    )
-                    Text(text ="Numero: ${jugadores.numero}")
-                    Text(text = "Nombre: ${jugadores.nombre}")
-                    Text(text = "Posicion: ${jugadores.posicion}")
-                    Text(text = "Nacionalidad: ${jugadores.nacionalidad}")
-                    Text(text = "Altura: ${jugadores.altura} m")
-                    Text(text = "Valor de mercado: ${jugadores.valorMercado}€")
+            Text(
+                text = "Cargando...",
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            )
+        } else {
+            LazyColumn(verticalArrangement = Arrangement.spacedBy(16.dp)) {
+                items(jugadores) { jugador ->
+
+                    Card(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(8.dp),
+                        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                        elevation = CardDefaults.cardElevation(8.dp)
+                    ) {
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(16.dp),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+
+                            AsyncImage(
+                                model = ImageRequest.Builder(LocalContext.current)
+                                    .data(jugador.img.replace("http://", "https://"))
+                                    .crossfade(true)
+                                    .build(),
+                                contentDescription = jugador.nombre,
+                                contentScale = ContentScale.Fit,
+                                modifier = Modifier
+                                    .size(150.dp)
+                                    .padding(bottom = 8.dp)
+                            )
+
+                            
+                            Text(
+                                text = "Número: ${jugador.numero}",
+                                style = MaterialTheme.typography.bodyMedium,
+                                modifier = Modifier.padding(bottom = 4.dp)
+                            )
+                            Text(
+                                text = "Nombre: ${jugador.nombre}",
+                                style = MaterialTheme.typography.bodyMedium,
+                                modifier = Modifier.padding(bottom = 4.dp)
+                            )
+                            Text(
+                                text = "Posición: ${jugador.posicion}",
+                                style = MaterialTheme.typography.bodyMedium,
+                                modifier = Modifier.padding(bottom = 4.dp)
+                            )
+                            Text(
+                                text = "Nacionalidad: ${jugador.nacionalidad}",
+                                style = MaterialTheme.typography.bodyMedium,
+                                modifier = Modifier.padding(bottom = 4.dp)
+                            )
+                            Text(
+                                text = "Altura: ${jugador.altura}",
+                                style = MaterialTheme.typography.bodyMedium,
+                                modifier = Modifier.padding(bottom = 4.dp)
+                            )
+                            Text(
+                                text = "Valor Mercado: ${jugador.valorMercado}",
+                                style = MaterialTheme.typography.bodyMedium,
+                                modifier = Modifier.padding(bottom = 4.dp)
+                            )
+                        }
+                    }
                 }
             }
         }
