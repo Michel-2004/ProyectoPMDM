@@ -94,7 +94,7 @@ fun Inicio(navController: NavController) {
             }
 
             Button(
-                onClick = {navController.navigate(route = AppScreens.JugadoresView.route)},
+                onClick = {navController.navigate(route = AppScreens.Jugadores.route)},
                 modifier = Modifier.padding(5.dp).width(200.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = MaterialTheme.colorScheme.onPrimaryContainer

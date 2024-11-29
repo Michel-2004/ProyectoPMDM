@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.proyectopmdm.AcercaDe
 import com.example.proyectopmdm.Configuracion
 import com.example.proyectopmdm.Inicio
+import com.example.proyectopmdm.Jugadores
 import com.example.proyectopmdm.SobreNosotros
 
 @Composable
@@ -27,7 +28,7 @@ fun AppNavigation(){
         composable(route = AppScreens.SobreNosotros.route){
             SobreNosotros(navController)
         }
-        composable(route = AppScreens.JugadoresView.route){
+        composable(route = AppScreens.Jugadores.route){
             Jugadores(navController)
         }
     }
