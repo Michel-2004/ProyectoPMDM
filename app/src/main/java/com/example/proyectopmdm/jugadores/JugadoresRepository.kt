@@ -1,9 +1,9 @@
 package com.example.proyectopmdm.jugadores
 
 class JugadoresRepository {
-    private val DatosJugadores = RetrofiInstance.DatosJugadores
+    private val jugadoresService = RetrofiInstance.jugadoresService
 
-    suspend fun getJugadores(): List<JugadoresRepository> {
-        return clienteJuagdores.getJuagadores
+    suspend fun getJugadores(): List<Jugadores> {
+        return jugadoresService.getJugadores()
     }
 }
