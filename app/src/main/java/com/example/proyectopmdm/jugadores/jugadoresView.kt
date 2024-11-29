@@ -1,5 +1,6 @@
 package com.example.proyectopmdm.jugadores
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -14,8 +15,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import coil.compose.AsyncImage
-import coil.request.ImageRequest
+import coil3.compose.AsyncImage
+import coil3.request.ImageRequest
+import coil3.request.crossfade
+
 
 @Composable
 fun jugadoresView(viewModel: JugadoresViewModel) {
@@ -28,7 +31,7 @@ fun jugadoresView(viewModel: JugadoresViewModel) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp)
+            .background(color = MaterialTheme.colorScheme.background)
     ) {
         if (jugadores.isEmpty()) {
             Text(
@@ -87,12 +90,12 @@ fun jugadoresView(viewModel: JugadoresViewModel) {
                                 modifier = Modifier.padding(bottom = 4.dp)
                             )
                             Text(
-                                text = "Altura: ${jugador.altura}",
+                                text = "Altura: ${jugador.altura} m",
                                 style = MaterialTheme.typography.bodyMedium,
                                 modifier = Modifier.padding(bottom = 4.dp)
                             )
                             Text(
-                                text = "Valor Mercado: ${jugador.valorMercado}",
+                                text = "Valor Mercado: ${jugador.valorMercado}€",
                                 style = MaterialTheme.typography.bodyMedium,
                                 modifier = Modifier.padding(bottom = 4.dp)
                             )
