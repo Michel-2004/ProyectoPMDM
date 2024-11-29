@@ -22,4 +22,5 @@
     <string name="salir">Exit</string>
     <string name="continuar">Continue</string>
     <string name="textoSalir"> ¿Are you sure?</string>
+    <string name="jugadores"> Player</string>
 </resources>

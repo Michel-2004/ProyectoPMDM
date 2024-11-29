@@ -27,5 +27,8 @@ fun AppNavigation(){
         composable(route = AppScreens.SobreNosotros.route){
             SobreNosotros(navController)
         }
+        composable(route = AppScreens.JugadoresView.route){
+            Jugadores(navController)
+        }
     }
 }
