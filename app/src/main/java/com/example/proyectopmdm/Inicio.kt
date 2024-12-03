@@ -117,6 +117,18 @@ fun Inicio(navController: NavController) {
                 Text(text = stringResource(id = R.string.salir))
 
             }
+            Button(
+                onClick = {navController.navigate(route = AppScreens.Login.route)},
+                modifier = Modifier.padding(5.dp).width(200.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.onPrimaryContainer
+                )
+            )
+            {
+
+                Text(text = stringResource(id = R.string.iniciar))
+
+            }
 
         }
         if (openDialog.value){

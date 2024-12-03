@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1060667430796",
+    "project_id": "proyecto-5afab",
+    "storage_bucket": "proyecto-5afab.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1060667430796:android:68ea971cd163cfa55ba8a9",
+        "android_client_info": {
+          "package_name": "com.example.proyectopmdm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLyM8MQr_TLJvGYQel1GBT0gk1upjVQCA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
