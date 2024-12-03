@@ -16,6 +16,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -31,10 +33,15 @@ import androidx.navigation.NavController
 import com.example.proyectopmdm.navigation.AppScreens
 import com.example.proyectopmdm.ui.theme.ProyectoPMDMTheme
 import com.example.proyectopmdm.ui.theme.backgroundLight
+import com.google.firebase.auth.FirebaseAuth
 
 @Composable
 fun Inicio(navController: NavController) {
     ProyectoPMDMTheme {
+
+        val auth = FirebaseAuth.getInstance()
+        val user = remember { mutableStateOf(auth.currentUser) }
+
         val openDialog = remember { mutableStateOf(false) }
         Column(
             modifier = Modifier.fillMaxSize().background(backgroundLight)
@@ -117,18 +124,32 @@ fun Inicio(navController: NavController) {
                 Text(text = stringResource(id = R.string.salir))
 
             }
-            Button(
-                onClick = {navController.navigate(route = AppScreens.Login.route)},
-                modifier = Modifier.padding(5.dp).width(200.dp),
+
+            // inicio o cierre de sesión
+            TextButton(
+                onClick = {
+                    if (user.value != null) {
+                        auth.signOut()
+                        user.value = null
+                    } else {
+                        navController.navigate(route = AppScreens.Login.route)
+                    }
+                },
+                modifier = Modifier
+                    .padding(5.dp)
+                    .width(200.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = MaterialTheme.colorScheme.onPrimaryContainer
                 )
-            )
-            {
-
-                Text(text = stringResource(id = R.string.iniciar))
-
+            ) {
+                Text(
+                    text = if (user.value != null) stringResource(id = R.string.cerrar_sesion)
+                    else stringResource(id = R.string.iniciar_sesion)
+                )
             }
+
+
+
 
         }
         if (openDialog.value){

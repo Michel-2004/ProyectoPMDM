@@ -1,6 +1,8 @@
 package com.example.proyectopmdm.login
 
 import android.util.Log
+import android.widget.Toast
+import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -14,6 +16,7 @@ class LoginScreenViewModel: ViewModel() {
     private val auth: FirebaseAuth = Firebase.auth
     private val _loading = MutableLiveData(false)
 
+
     fun signInWithEmailAndPassword(email: String, passwor: String, home: ()-> Unit)
     = viewModelScope.launch {
         try {
@@ -22,9 +25,19 @@ class LoginScreenViewModel: ViewModel() {
                     if (task.isSuccessful){
                         Log.d("Proyecto","logueado")
                         home()
+                        Toast.makeText(
+                            FirebaseAuth.getInstance().app.applicationContext,
+                            "Sesion Iniciada Correctamente",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
-                    else{
-                        Log.d("Proyecto","${task.result.toString()}")
+                    else {
+                        Log.d("Proyecto", "Error al iniciar sesión")
+                        Toast.makeText(
+                            FirebaseAuth.getInstance().app.applicationContext,
+                            "Error al iniciar sesión: ",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 }
         }

@@ -26,4 +26,6 @@
     <string name="registrate">Registrate</string>
     <string name="noTienesCuenta">¿No tienes Cuenta?</string>
     <string name="tienesCuenta">¿Ya tienes Cuenta?</string>
+    <string name="iniciar_sesion">Iniciar Sesion</string>
+    <string name="cerrar_sesion" >Cerrar Sesion</string>
 </resources>
