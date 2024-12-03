@@ -22,4 +22,6 @@
     <string name="continuar"> Continuar</string>
     <string name="textoSalir"> ¿Realmente quiere salir?</string>
     <string name="jugadores"> Jugadores</string>
+    <string name="iniciar">Iniciar Sesion</string>
+    <string name="registrate">registrate</string>
 </resources>

@@ -23,4 +23,6 @@
     <string name="continuar">Continue</string>
     <string name="textoSalir"> ¿Are you sure?</string>
     <string name="jugadores"> Player</string>
+    <string name="iniciar">Login</string>
+    <string name="registrate">Create Account</string>
 </resources>
