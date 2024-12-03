@@ -24,4 +24,6 @@
     <string name="jugadores"> Jugadores</string>
     <string name="iniciar">Iniciar Sesion</string>
     <string name="registrate">registrate</string>
+    <string name="noTienesCuenta">¿No tienes Cuenta?</string>
+    <string name="tienesCuenta">¿Ya tienes Cuenta?</string>
 </resources>

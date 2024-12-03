@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -68,11 +69,11 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.14")
     implementation("io.coil-kt.coil3:coil-compose:3.0.2")
     implementation("io.coil-kt.coil3:coil-network-okhttp:3.0.2")
-    // Coil para Jetpack Compose
     implementation("io.coil-kt:coil-compose:2.4.0")
-    // (Opcional) Si necesitas soporte para GIFs o SVGs
     implementation("io.coil-kt:coil-gif:2.4.0")
     implementation("io.coil-kt:coil-svg:2.4.0")
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-firestore-ktx:25.1.1")
     implementation(libs.androidx.runtime.livedata)
     implementation(libs.volley)
     implementation(libs.androidx.espresso.core)
@@ -85,4 +86,5 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation("androidx.compose.material:material-icons-extended:1.3.1")
+    implementation(platform("com.google.firebase:firebase-bom:33.6.0"))
 }

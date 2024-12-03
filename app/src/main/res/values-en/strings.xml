@@ -25,4 +25,6 @@
     <string name="jugadores"> Player</string>
     <string name="iniciar">Login</string>
     <string name="registrate">Create Account</string>
+    <string name="noTienesCuenta">¿Don\'t have Account?</string>
+    <string name="tienesCuenta">¿Have Account?</string>
 </resources>

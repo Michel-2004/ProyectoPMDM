@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "169490747977",
-    "project_id": "proyectopmdm-fc8ba",
-    "storage_bucket": "proyectopmdm-fc8ba.firebasestorage.app"
+    "project_number": "1060667430796",
+    "project_id": "proyecto-5afab",
+    "storage_bucket": "proyecto-5afab.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:169490747977:android:083eaf5e46b3fed2116598",
+        "mobilesdk_app_id": "1:1060667430796:android:68ea971cd163cfa55ba8a9",
         "android_client_info": {
           "package_name": "com.example.proyectopmdm"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBaEhQwwCwn2NYex0nP4j2LogERrfNnA8Q"
+          "current_key": "AIzaSyBLyM8MQr_TLJvGYQel1GBT0gk1upjVQCA"
         }
       ],
       "services": {
