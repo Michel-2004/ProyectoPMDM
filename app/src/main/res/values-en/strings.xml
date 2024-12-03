@@ -27,6 +27,6 @@
     <string name="registrate">Create Account</string>
     <string name="noTienesCuenta">¿Don\'t have Account?</string>
     <string name="tienesCuenta">¿Have Account?</string>
-    <string name="iniciar_sesion">Sing In</string>
-    <string name="cerrar_sesion" >Close Sesion</string>
+    <string name="iniciar_sesion">login</string>
+    <string name="cerrar_sesion" >Log out</string>
 </resources>
