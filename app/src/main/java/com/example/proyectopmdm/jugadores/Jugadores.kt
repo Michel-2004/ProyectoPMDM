@@ -1,11 +1,11 @@
 package com.example.proyectopmdm.jugadores
 
-data class DatosJugadores(
-    val numero: Number,
+data class Jugadores(
+    val numero: String,
     val nombre: String,
     val posicion: String,
     val nacionalidad: String,
-    val altura: Number,
-    val valorMercado : Number,
+    val altura: String,
+    val valorMercado : String,
     val img : String
 )

@@ -12,8 +12,14 @@ datastoreCoreAndroid = "1.1.1"
 datastorePreferencesCoreJvm = "1.1.1"
 preference = "1.2.1"
 navigationRuntimeKtx = "2.8.4"
+runtimeLivedata = "1.7.5"
+volley = "1.2.1"
+googleGmsGoogleServices = "4.4.2"
+firebaseAuth = "23.1.0"
+firebaseAuthKtx = "23.1.0"
 
 [libraries]
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -30,9 +36,13 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-preference = { group = "androidx.preference", name = "preference", version.ref = "preference" }
 androidx-navigation-runtime-ktx = { group = "androidx.navigation", name = "navigation-runtime-ktx", version.ref = "navigationRuntimeKtx" }
+androidx-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "runtimeLivedata" }
+volley = { group = "com.android.volley", name = "volley", version.ref = "volley" }
+firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
 
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
 

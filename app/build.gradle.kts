@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -58,6 +59,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.firebase.auth)
     implementation("androidx.navigation:navigation-compose:2.8.4")
     implementation("androidx.datastore:datastore-preferences:1.0.0")
     implementation("androidx.datastore:datastore-core:1.0.0")
@@ -67,6 +69,15 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.14")
     implementation("io.coil-kt.coil3:coil-compose:3.0.2")
     implementation("io.coil-kt.coil3:coil-network-okhttp:3.0.2")
+    implementation("io.coil-kt:coil-compose:2.4.0")
+    implementation("io.coil-kt:coil-gif:2.4.0")
+    implementation("io.coil-kt:coil-svg:2.4.0")
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-firestore-ktx:25.1.1")
+    implementation(libs.androidx.runtime.livedata)
+    implementation(libs.volley)
+    implementation(libs.androidx.espresso.core)
+    implementation(libs.firebase.auth.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -74,4 +85,6 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation("androidx.compose.material:material-icons-extended:1.3.1")
+    implementation(platform("com.google.firebase:firebase-bom:33.6.0"))
 }

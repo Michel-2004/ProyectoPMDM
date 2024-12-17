@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
-
 package com.example.proyectopmdm
 
 import ConfiguracionDataStore
@@ -30,6 +28,7 @@ import kotlinx.coroutines.launch
 import androidx.compose.ui.platform.LocalContext
 
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Configuracion(navController: NavController) {
     val context = LocalContext.current

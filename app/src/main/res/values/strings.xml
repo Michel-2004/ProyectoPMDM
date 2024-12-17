@@ -21,4 +21,11 @@
     <string name="salir"> Salir</string>
     <string name="continuar"> Continuar</string>
     <string name="textoSalir"> ¿Realmente quiere salir?</string>
+    <string name="jugadores"> Jugadores</string>
+    <string name="iniciar">Iniciar Sesión</string>
+    <string name="registrate">Registrate</string>
+    <string name="noTienesCuenta">¿No tienes Cuenta?</string>
+    <string name="tienesCuenta">¿Ya tienes Cuenta?</string>
+    <string name="iniciar_sesion">Iniciar Sesion</string>
+    <string name="cerrar_sesion" >Cerrar Sesion</string>
 </resources>

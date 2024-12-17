@@ -22,4 +22,11 @@
     <string name="salir">Exit</string>
     <string name="continuar">Continue</string>
     <string name="textoSalir"> ¿Are you sure?</string>
+    <string name="jugadores"> Player</string>
+    <string name="iniciar">Login</string>
+    <string name="registrate">Create Account</string>
+    <string name="noTienesCuenta">¿Don\'t have Account?</string>
+    <string name="tienesCuenta">¿Have Account?</string>
+    <string name="iniciar_sesion">login</string>
+    <string name="cerrar_sesion" >Log out</string>
 </resources>
